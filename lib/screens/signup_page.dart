@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../components/login_reg_button.dart';
 import '../constants.dart';
 
-class RegPage extends StatelessWidget {
-  const RegPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {

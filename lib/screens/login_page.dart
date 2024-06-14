@@ -1,5 +1,6 @@
 import 'package:expense_tracker/components/login_reg_button.dart';
 import 'package:expense_tracker/constants.dart';
+import 'package:expense_tracker/screens/landing_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -38,7 +39,10 @@ class LoginPage extends StatelessWidget {
               LoginRegButton(
                   title: 'Log in',
                   buttonColor: Colors.lightBlueAccent,
-                  whenOnPressed: () {}),
+                  whenOnPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  }),
               TextButton(
                 onPressed: () {},
                 child: Text('Forgot password'),

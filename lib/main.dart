@@ -1,4 +1,4 @@
-import 'package:expense_tracker/screens/home_page.dart';
+import 'package:expense_tracker/screens/starting_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: HomePage(),
+      home: StartingPage(),
     );
   }
 }
