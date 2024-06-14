@@ -1,3 +1,4 @@
+import 'package:expense_tracker/screens/landing_page.dart';
 import 'package:flutter/material.dart';
 
 import '../components/login_reg_button.dart';
@@ -39,7 +40,10 @@ class SignupPage extends StatelessWidget {
               LoginRegButton(
                   title: 'Register',
                   buttonColor: Colors.lightBlue,
-                  whenOnPressed: () {}),
+                  whenOnPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LandingPage()));
+                  }),
             ],
           ),
         ],

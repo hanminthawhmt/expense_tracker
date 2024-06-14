@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
                   buttonColor: Colors.lightBlueAccent,
                   whenOnPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                        MaterialPageRoute(builder: (context) => LandingPage()));
                   }),
               TextButton(
                 onPressed: () {},

@@ -1,17 +1,25 @@
+import 'package:expense_tracker/screens/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'analyst_page.dart';
+import 'home_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LandingPage> createState() => _LandingPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LandingPageState extends State<LandingPage> {
   int currentPageIndex = 0;
+  final List<String> appbarTitle = ['Home', 'Analyst', 'Profile'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlue,
+          title: Text(appbarTitle[currentPageIndex]),
+        ),
         bottomNavigationBar: NavigationBar(
           backgroundColor: Colors.lightBlue,
           onDestinationSelected: (int index) {
@@ -27,22 +35,15 @@ class _HomePageState extends State<HomePage> {
               label: 'Home',
             ),
             NavigationDestination(
+                icon: Icon(Icons.bar_chart), label: 'Analyst'),
+            NavigationDestination(
                 icon: Icon(Icons.account_circle_rounded), label: 'Profile'),
           ],
         ),
         body: <Widget>[
-          Center(
-            child: Text(
-              'Home Page',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          Center(
-            child: Text(
-              'Profile Page',
-              style: TextStyle(color: Colors.black),
-            ),
-          )
+          HomePage(),
+          AnalystPage(),
+          ProfilePage(),
         ][currentPageIndex]);
   }
 }

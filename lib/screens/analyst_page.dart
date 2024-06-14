@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({
+class AnalystPage extends StatelessWidget {
+  const AnalystPage({
     super.key,
   });
 
@@ -9,7 +9,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Profile Page',
+        'Analyst Page',
         style: TextStyle(color: Colors.black),
       ),
     );
