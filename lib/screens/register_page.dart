@@ -1,9 +1,10 @@
-import 'package:expense_tracker/components/login_reg_button.dart';
-import 'package:expense_tracker/constants.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+import '../components/login_reg_button.dart';
+import '../constants.dart';
+
+class RegPage extends StatelessWidget {
+  const RegPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +37,9 @@ class LoginPage extends StatelessWidget {
                 height: 10,
               ),
               LoginRegButton(
-                  title: 'Log in',
-                  buttonColor: Colors.lightBlueAccent,
+                  title: 'Register',
+                  buttonColor: Colors.lightBlue,
                   whenOnPressed: () {}),
-              TextButton(
-                onPressed: () {},
-                child: Text('Forgot password'),
-              )
             ],
           ),
         ],
