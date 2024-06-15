@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expense_tracker/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'analytics_page.dart';
@@ -14,7 +15,9 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  String? username;
   final _auth = FirebaseAuth.instance;
+  final _firestore = FirebaseFirestore.instance;
 
   @override
   void initState() {
@@ -27,9 +30,21 @@ class _LandingPageState extends State<LandingPage> {
     final user = await _auth.currentUser;
     if (user != null) {
       loggedInUser = user;
+
       print(loggedInUser?.email);
     }
   }
+
+  // Future<void> getCurrentUserName() async {
+  //   DocumentSnapshot doc = (await _firestore
+  //       .collection('User Data')
+  //       .doc(loggedInUser?.email)) as DocumentSnapshot<Object?>;
+  //   if (doc.exists) {
+  //     setState(() {
+  //       username = doc['username'];
+  //     });
+  //   }
+  // }
 
   int currentPageIndex = 0;
   final List<String> appbarTitle = ['Home', 'Analytics', 'Profile'];
@@ -65,6 +80,7 @@ class _LandingPageState extends State<LandingPage> {
           AnalyticsPage(),
           ProfilePage(
             profileEmail: loggedInUser?.email,
+            // profileName: username,
           ),
         ][currentPageIndex]);
   }
