@@ -1,12 +1,20 @@
 import 'package:expense_tracker/screens/landing_page.dart';
 import 'package:flutter/material.dart';
-
 import '../components/login_reg_button.dart';
 import '../constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  String? email;
+  String? password;
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +34,9 @@ class SignupPage extends StatelessWidget {
             children: [
               TextField(
                 decoration: kTextFieldDecoration.copyWith(hintText: 'Gmail'),
+                onChanged: (value) {
+                  email = value;
+                },
               ),
               SizedBox(
                 height: 10,
@@ -33,6 +44,9 @@ class SignupPage extends StatelessWidget {
               TextField(
                 obscureText: true,
                 decoration: kTextFieldDecoration.copyWith(hintText: 'Password'),
+                onChanged: (value) {
+                  password = value;
+                },
               ),
               SizedBox(
                 height: 10,
@@ -40,9 +54,18 @@ class SignupPage extends StatelessWidget {
               LoginRegButton(
                   title: 'Register',
                   buttonColor: Colors.lightBlue,
-                  whenOnPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LandingPage()));
+                  whenOnPressed: () async {
+                    try {
+                      final newUser =
+                          await _auth.createUserWithEmailAndPassword(
+                              email: email!, password: password!);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LandingPage()));
+                    } catch (e) {
+                      print(e);
+                    }
                   }),
             ],
           ),

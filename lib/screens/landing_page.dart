@@ -1,7 +1,10 @@
 import 'package:expense_tracker/screens/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'analyst_page.dart';
+import 'analytics_page.dart';
 import 'home_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+User? loggedInUser;
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -11,8 +14,25 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  final _auth = FirebaseAuth.instance;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async {
+    final user = await _auth.currentUser;
+    if (user != null) {
+      loggedInUser = user;
+      print(loggedInUser?.email);
+    }
+  }
+
   int currentPageIndex = 0;
-  final List<String> appbarTitle = ['Home', 'Analyst', 'Profile'];
+  final List<String> appbarTitle = ['Home', 'Analytics', 'Profile'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,15 +55,17 @@ class _LandingPageState extends State<LandingPage> {
               label: 'Home',
             ),
             NavigationDestination(
-                icon: Icon(Icons.bar_chart), label: 'Analyst'),
+                icon: Icon(Icons.bar_chart), label: 'Analytics'),
             NavigationDestination(
                 icon: Icon(Icons.account_circle_rounded), label: 'Profile'),
           ],
         ),
         body: <Widget>[
           HomePage(),
-          AnalystPage(),
-          ProfilePage(),
+          AnalyticsPage(),
+          ProfilePage(
+            profileEmail: loggedInUser?.email,
+          ),
         ][currentPageIndex]);
   }
 }
