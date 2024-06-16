@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
   final String? profileEmail;
-  //final String? profileName;
+  final String? profileName;
   ProfilePage({
     required this.profileEmail,
+    required this.profileName,
   });
 
   @override
@@ -23,7 +24,7 @@ class ProfilePage extends StatelessWidget {
             backgroundColor: Colors.grey,
           ),
           Text(
-            'registered username appear here',
+            profileName!,
             style: TextStyle(color: Colors.black),
           ),
           Text(

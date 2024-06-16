@@ -24,6 +24,7 @@ class _LandingPageState extends State<LandingPage> {
     // TODO: implement initState
     super.initState();
     getCurrentUser();
+    getCurrentUserName();
   }
 
   void getCurrentUser() async {
@@ -32,19 +33,30 @@ class _LandingPageState extends State<LandingPage> {
       loggedInUser = user;
 
       print(loggedInUser?.email);
+      getCurrentUserName();
     }
   }
 
-  // Future<void> getCurrentUserName() async {
-  //   DocumentSnapshot doc = (await _firestore
-  //       .collection('User Data')
-  //       .doc(loggedInUser?.email)) as DocumentSnapshot<Object?>;
-  //   if (doc.exists) {
-  //     setState(() {
-  //       username = doc['username'];
-  //     });
-  //   }
-  // }
+  void getCurrentUserName() async {
+    try {
+      if (loggedInUser != null) {
+        final userDoc = await _firestore
+            .collection('User Data')
+            .doc(loggedInUser!.email!)
+            .get();
+        if (userDoc.exists) {
+          setState(() {
+            username = userDoc.data()?['username'];
+          });
+          print(username);
+        } else {
+          print('No user data found');
+        }
+      }
+    } catch (e) {
+      print('Failed to get username: $e');
+    }
+  }
 
   int currentPageIndex = 0;
   final List<String> appbarTitle = ['Home', 'Analytics', 'Profile'];
@@ -80,6 +92,7 @@ class _LandingPageState extends State<LandingPage> {
           AnalyticsPage(),
           ProfilePage(
             profileEmail: loggedInUser?.email,
+            profileName: username,
             // profileName: username,
           ),
         ][currentPageIndex]);
