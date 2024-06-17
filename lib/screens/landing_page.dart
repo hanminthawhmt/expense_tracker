@@ -24,7 +24,6 @@ class _LandingPageState extends State<LandingPage> {
     // TODO: implement initState
     super.initState();
     getCurrentUser();
-    getCurrentUserName();
   }
 
   void getCurrentUser() async {
@@ -37,6 +36,7 @@ class _LandingPageState extends State<LandingPage> {
     }
   }
 
+  //need to fix here
   void getCurrentUserName() async {
     try {
       if (loggedInUser != null) {
