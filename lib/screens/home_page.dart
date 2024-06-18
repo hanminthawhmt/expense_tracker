@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -15,41 +17,26 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
-                ),
-                width: 150,
-                height: 150,
-              ),
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/expense.png'),
+                    ),
+                    Text('Daily Expense'),
+                  ],
                 ),
               ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
-                ),
-              ),
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/income.png'),
+                    ),
+                    Text('Income'),
+                  ],
                 ),
               ),
             ],
@@ -57,20 +44,53 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/categories.png'),
+                    ),
+                    Text('Expense by Categories'),
+                  ],
                 ),
               ),
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/report.png'),
+                    ),
+                    Text('Monthly Report'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/saving.png'),
+                    ),
+                    Text('Savings'),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset('images/wishlist.png'),
+                    ),
+                    Text('Wishlist'),
+                  ],
                 ),
               ),
             ],
@@ -80,3 +100,11 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+// Container(
+//   decoration: BoxDecoration(
+//     borderRadius: BorderRadius.circular(20),
+//     color: Colors.blueGrey,
+//   ),
+//   width: 150,
+//   height: 150,
+// ),
