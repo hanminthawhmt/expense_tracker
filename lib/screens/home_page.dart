@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import '../components/homepage_buttons.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -17,82 +18,34 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/expense.png'),
-                    ),
-                    Text('Daily Expense'),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/income.png'),
-                    ),
-                    Text('Income'),
-                  ],
-                ),
-              ),
+              HPButtons(
+                  imageLoc: Image.asset('images/expense.png'),
+                  buttonTitle: 'Daily Expense'),
+              HPButtons(
+                  imageLoc: Image.asset('images/income.png'),
+                  buttonTitle: 'Income')
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/categories.png'),
-                    ),
-                    Text('Expense by Categories'),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/report.png'),
-                    ),
-                    Text('Monthly Report'),
-                  ],
-                ),
-              ),
+              HPButtons(
+                  imageLoc: Image.asset('images/categories.png'),
+                  buttonTitle: 'Expense by Categories'),
+              HPButtons(
+                  imageLoc: Image.asset('images/report.png'),
+                  buttonTitle: 'Monthly Report'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/saving.png'),
-                    ),
-                    Text('Savings'),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset('images/wishlist.png'),
-                    ),
-                    Text('Wishlist'),
-                  ],
-                ),
-              ),
+              HPButtons(
+                  imageLoc: Image.asset('images/saving.png'),
+                  buttonTitle: 'Savings'),
+              HPButtons(
+                  imageLoc: Image.asset('images/wishlist.png'),
+                  buttonTitle: 'Wishlist'),
             ],
           )
         ],
@@ -100,11 +53,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// Container(
-//   decoration: BoxDecoration(
-//     borderRadius: BorderRadius.circular(20),
-//     color: Colors.blueGrey,
-//   ),
-//   width: 150,
-//   height: 150,
-// ),
