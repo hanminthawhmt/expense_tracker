@@ -53,6 +53,7 @@ class ProfilePage extends StatelessWidget {
               Card(
                 child: Text('About Us'),
               ),
+              ElevatedButton(onPressed: () {}, child: Text('Change Theme')),
               TextButton(
                   onPressed: () {
                     _auth.signOut();
