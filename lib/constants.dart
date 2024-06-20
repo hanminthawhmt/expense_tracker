@@ -13,21 +13,23 @@ const kTextStyle = TextStyle(
 );
 
 const kTextFieldDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+  filled: true,
+  fillColor: Colors.white,
+  contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
   hintText: 'Value',
   border: OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(32)),
+    borderRadius: BorderRadius.all(Radius.circular(15)),
   ),
   enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlue, width: 2.0),
+    borderSide: BorderSide(color: Colors.black45, width: 2.0),
     borderRadius: BorderRadius.all(
-      Radius.circular(32.0),
+      Radius.circular(15.0),
     ),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlue, width: 3.0),
+    borderSide: BorderSide(color: Colors.black45, width: 3.0),
     borderRadius: BorderRadius.all(
-      Radius.circular(32.0),
+      Radius.circular(15.0),
     ),
   ),
 );

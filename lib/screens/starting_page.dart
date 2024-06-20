@@ -1,3 +1,4 @@
+import 'package:expense_tracker/components/my_button.dart';
 import 'package:expense_tracker/constants.dart';
 import 'package:expense_tracker/screens/login_page.dart';
 import 'package:expense_tracker/screens/signup_page.dart';
@@ -10,6 +11,7 @@ class StartingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: Container(
         padding: EdgeInsets.only(right: 30, left: 30),
         child: Column(
@@ -34,24 +36,45 @@ class StartingPage extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                LoginRegButton(
-                    title: 'Log in',
-                    buttonColor: Colors.lightBlueAccent,
-                    whenOnPressed: () {
+                // LoginRegButton(
+                //     title: 'Log in',
+                //     buttonColor: Colors.black87,
+                //     whenOnPressed: () {
+                //       Navigator.push(context,
+                //           MaterialPageRoute(builder: (context) {
+                //         return LoginPage();
+                //       }));
+                //     }),
+                MyButton(
+                    buttonTitle: 'Log in',
+                    buttonColor: Colors.black87,
+                    whenOnTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return LoginPage();
                       }));
                     }),
-                LoginRegButton(
-                    title: 'Register',
-                    buttonColor: Colors.lightBlue,
-                    whenOnPressed: () {
+                SizedBox(
+                  height: 20,
+                ),
+                MyButton(
+                    buttonTitle: 'Register',
+                    buttonColor: Colors.black54,
+                    whenOnTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return SignupPage();
                       }));
                     }),
+                // LoginRegButton(
+                //     title: 'Register',
+                //     buttonColor: Colors.black54,
+                //     whenOnPressed: () {
+                //       Navigator.push(context,
+                //           MaterialPageRoute(builder: (context) {
+                //         return SignupPage();
+                //       }));
+                //     }),
               ],
             ),
           ],
