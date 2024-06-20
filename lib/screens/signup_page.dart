@@ -88,6 +88,8 @@ class _SignupPageState extends State<SignupPage> {
                   title: 'Register',
                   buttonColor: Colors.lightBlue,
                   whenOnPressed: registerNewUser),
+              Container(),
+              Container(),
             ],
           ),
         ],
