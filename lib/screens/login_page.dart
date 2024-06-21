@@ -1,11 +1,9 @@
-import 'package:expense_tracker/components/login_reg_button.dart';
 import 'package:expense_tracker/components/my_button.dart';
 import 'package:expense_tracker/constants.dart';
 import 'package:expense_tracker/screens/landing_page.dart';
 import 'package:expense_tracker/screens/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import '../components/square_button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -136,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                         'Register Here',
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.grey[600]),
+                            color: Colors.black),
                       ),
                     ),
                   ],

@@ -1,14 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expense_tracker/screens/landing_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import '../components/login_reg_button.dart';
 import '../components/my_button.dart';
 import '../components/square_button.dart';
 import '../constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'login_page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -153,7 +149,7 @@ class _SignupPageState extends State<SignupPage> {
                         'Login Here',
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.grey[600]),
+                            color: Colors.black),
                       ),
                     ),
                   ],

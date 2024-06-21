@@ -6,6 +6,7 @@ final _auth = FirebaseAuth.instance;
 class ProfilePage extends StatelessWidget {
   final String? profileEmail;
   final String? profileName;
+
   ProfilePage({
     required this.profileEmail,
     required this.profileName,
